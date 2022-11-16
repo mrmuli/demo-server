@@ -24,8 +24,10 @@ service:
   port: 3030
 
 # Create a configmap with environment-specific config.
-configmapData:
-  SERVER_USERNAME: "development"
+configmap:
+  configmapData:
+    SERVER_USERNAME: "development"
+    TEAM: "blue"
 
 resources: {}
 

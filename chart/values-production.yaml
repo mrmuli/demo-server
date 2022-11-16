@@ -23,8 +23,10 @@ service:
   type: ClusterIP
   port: 3030
 
-configmapData:
-  SERVER_USERNAME: "production"
+configmap:
+  configmapData:
+    SERVER_USERNAME: "production"
+    TEAM: "blue"
 
 
 resources: {}
