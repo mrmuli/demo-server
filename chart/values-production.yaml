@@ -17,7 +17,7 @@ podSecurityContext: {}
 securityContext: {}
 
 config:
-  ConfigMap: demo-server
+  ConfigMap: demo-server-prod
 
 service:
   type: ClusterIP
