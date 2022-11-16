@@ -1,0 +1,6 @@
+dependencies:
+- name: configmap
+  repository: https://ameijer.github.io/k8s-as-helm
+  version: 1.0.3
+digest: sha256:22e5078b73533d695ab6b67d604ccb67c54d0e4a89ac5e4379b528da176fe8c8
+generated: "2022-11-16T16:52:39.291084+01:00"

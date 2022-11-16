@@ -1,0 +1,43 @@
+replicaCount: 1
+
+image:
+  repository: josephmuli/demo-server
+  pullPolicy: IfNotPresent
+  tag: "2.0.1"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+config:
+  ConfigMap: demo-server
+
+service:
+  type: ClusterIP
+  port: 3030
+
+configmap:
+  configmapData:
+    SERVER_USERNAME: "production"
+    TEAM: "blue"
+
+
+resources: {}
+
+nodeSelector: {}
+
+# Uncomment this to deploy this service to nodes or node pools with the defined label.
+# nodeSelector:
+#   environment: production
+
+tolerations: []
+
+affinity: {}
+

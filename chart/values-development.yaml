@@ -1,0 +1,44 @@
+replicaCount: 1
+
+
+
+image:
+  repository: josephmuli/demo-server
+  pullPolicy: IfNotPresent
+  tag: "1.0.1-dev"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+config:
+  ConfigMap: demo-server
+
+
+service:
+  type: ClusterIP
+  port: 3030
+
+# Create a configmap with environment-specific config.
+configmap:
+  configmapData:
+    SERVER_USERNAME: "development"
+    TEAM: "blue"
+
+resources: {}
+
+nodeSelector: {}
+
+# Uncomment this to deploy this service to nodes or node pools with the defined label.
+# nodeSelector:
+#   environment: development
+
+tolerations: []
+
+affinity: {}
