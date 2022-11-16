@@ -1,5 +1,7 @@
 replicaCount: 1
 
+
+
 image:
   repository: josephmuli/demo-server
   pullPolicy: IfNotPresent
@@ -32,6 +34,10 @@ configmap:
 resources: {}
 
 nodeSelector: {}
+
+# Uncomment this to deploy this service to nodes or node pools with the defined label.
+# nodeSelector:
+#   environment: development
 
 tolerations: []
 

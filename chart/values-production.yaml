@@ -33,6 +33,10 @@ resources: {}
 
 nodeSelector: {}
 
+# Uncomment this to deploy this service to nodes or node pools with the defined label.
+# nodeSelector:
+#   environment: production
+
 tolerations: []
 
 affinity: {}
