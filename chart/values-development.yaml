@@ -20,6 +20,9 @@ service:
   type: ClusterIP
   port: 3030
 
+k8s-as-helm:
+  configmapData:
+    SERVER_USERNAME: "development"
 
 resources: {}
 
