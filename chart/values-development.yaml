@@ -15,12 +15,17 @@ podSecurityContext: {}
 
 securityContext: {}
 
+config:
+  ConfigMap: demo-config
+
 
 service:
   type: ClusterIP
   port: 3030
 
+# Create a configmap with environment-specific config.
 k8s-as-helm:
+  name: demo-config
   configmapData:
     SERVER_USERNAME: "development"
 
