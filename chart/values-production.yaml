@@ -1,0 +1,27 @@
+replicaCount: 1
+
+image:
+  repository: josephmuli/demo-server
+  pullPolicy: IfNotPresent
+  tag: "2.0.1"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+
+podAnnotations: {}
+
+
+service:
+  type: ClusterIP
+  port: 3030
+
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
