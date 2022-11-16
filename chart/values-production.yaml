@@ -12,6 +12,12 @@ fullnameOverride: ""
 
 podAnnotations: {}
 
+podSecurityContext: {}
+
+securityContext: {}
+
+config:
+  ConfigMap: demo-server
 
 service:
   type: ClusterIP

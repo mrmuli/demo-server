@@ -16,7 +16,7 @@ podSecurityContext: {}
 securityContext: {}
 
 config:
-  ConfigMap: demo-config
+  ConfigMap: demo-server
 
 
 service:
