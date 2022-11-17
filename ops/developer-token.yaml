@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: developer-access
+  annotations:
+    kubernetes.io/service-account.name: developer
+type: kubernetes.io/service-account-token
