@@ -9,6 +9,6 @@ dependencies:
   - name: configmap
     version: 1.0.3
     repository: https://ameijer.github.io/k8s-as-helm
-  # - name: sealed-secrets
-  #   version: 1.1.10
-  #   repository: https://charts.bitnami.com/bitnami
+  # - name: sealed-secrets-template
+  #   version: 0.1.0
+  #   repository: pending

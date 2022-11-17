@@ -19,7 +19,15 @@ securityContext: {}
 
 config:
   ConfigMap: demo-server
+  envVarsFromSecret:
+      - name: demo-server-secrets
+        vars:
+          MYSQL_DB_PASSWORD: MYSQL_PASSWORD
 
+sealed-secrets-template:
+  name: demo-server-secrets
+  sealedSecrets:
+      MYSQL_PASSWORD: AgA1+zbOjRqapDL4WO97TYqTByoe6iFLbiOgAnGpnAb5XOTyTchofzPl8UFMsn2lil3zaOjhpQGq86kgOk8gNs0lBp0cl/5qK6NB7C36Mi/9eIBRCQJh0XQR51E8glV5Xb02/FPcVIjwdeCnD1ALCAgwqFJN+UlMP++f9wHSw8C9O538VrqGhhHgOnu7uCyWFi3zdn3dMPXHFXm0eyJKhJ/ovNruV8NPoPFUy6A73pEWAUwt+DTbYzCEa5QnlUF/KolY2DxY7XiBEsPda0zjvZhMHvSbwUeobJnht6SMAtGL3bLevH1IjuFOiQJI/Bp5kcAdB1xp6FT8NWs8k5Lh6+KdTY1JlVhoDdiw3yD6xK5O70akSZOrl0jzj91SqdOx8og7w0FR2oNpUegrVT56oxvZGjuHTaMA3n1v20aBJouhBkYCU1Gd9sIlXXAoINRF7OEfHyNTkTEgKBAj6UXPJ4eX8FZFXZhfYE23w2aNeGvqL0hfBOdxzHMHG8tGIC7s0AG5TsJMWCrY//2rToMrj+dHBtev5dCU1cEO0AeyJ5W9rbZgnkDglsMpQDEw1ugBhtdzKM2uUUgEHiRlHicOp7XJ6ovFa2JKxfghINP29Yr/hiPWb3cI4Q3hlY2NN4ONSSwH3U5QOjnBDia+kgw89M6WNYSRPqk7onXwMiR/mIsO0G2jCIvGxtx8Vc/BW9KLbDreXyOX8Y0J/n4=
 
 service:
   type: ClusterIP
@@ -30,6 +38,9 @@ configmap:
   configmapData:
     SERVER_USERNAME: "development"
     TEAM: "blue"
+
+sealedSecrets:
+  MYSQL_PASSWORD: AgA1+zbOjRqapDL4WO97TYqTByoe6iFLbiOgAnGpnAb5XOTyTchofzPl8UFMsn2lil3zaOjhpQGq86kgOk8gNs0lBp0cl/5qK6NB7C36Mi/9eIBRCQJh0XQR51E8glV5Xb02/FPcVIjwdeCnD1ALCAgwqFJN+UlMP++f9wHSw8C9O538VrqGhhHgOnu7uCyWFi3zdn3dMPXHFXm0eyJKhJ/ovNruV8NPoPFUy6A73pEWAUwt+DTbYzCEa5QnlUF/KolY2DxY7XiBEsPda0zjvZhMHvSbwUeobJnht6SMAtGL3bLevH1IjuFOiQJI/Bp5kcAdB1xp6FT8NWs8k5Lh6+KdTY1JlVhoDdiw3yD6xK5O70akSZOrl0jzj91SqdOx8og7w0FR2oNpUegrVT56oxvZGjuHTaMA3n1v20aBJouhBkYCU1Gd9sIlXXAoINRF7OEfHyNTkTEgKBAj6UXPJ4eX8FZFXZhfYE23w2aNeGvqL0hfBOdxzHMHG8tGIC7s0AG5TsJMWCrY//2rToMrj+dHBtev5dCU1cEO0AeyJ5W9rbZgnkDglsMpQDEw1ugBhtdzKM2uUUgEHiRlHicOp7XJ6ovFa2JKxfghINP29Yr/hiPWb3cI4Q3hlY2NN4ONSSwH3U5QOjnBDia+kgw89M6WNYSRPqk7onXwMiR/mIsO0G2jCIvGxtx8Vc/BW9KLbDreXyOX8Y0J/n4=
 
 resources: {}
 
