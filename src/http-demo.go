@@ -17,10 +17,8 @@ func init() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	if unleash.IsEnabled("http-demo.hello") {
-		// io.WriteString(w, "Congratulations! this feature is enabled\n")
 		fmt.Fprintf(w, "Congratulations! this feature is enabled\n")
 	} else {
-		// io.WriteString(w, "Hello this feature isn't there yet!\n")
 		fmt.Fprintf(w, "Hello this feature isn't there yet!\n")
 	}
 }
