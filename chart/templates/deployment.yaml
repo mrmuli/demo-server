@@ -36,6 +36,17 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          env:
+          {{- range .Values.config.envVarsFromSecret }}
+          {{ $secretName:= .name }}
+          {{- range $key, $val := .vars }}
+            - name: {{ $key }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $secretName }}
+                  key: {{ $val }}
+            {{- end }}
+          {{- end }}
           envFrom:
           - configMapRef:
               name: {{ .Values.config.ConfigMap}}

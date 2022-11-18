@@ -18,6 +18,15 @@ securityContext: {}
 
 config:
   ConfigMap: demo-server-prod
+  envVarsFromSecret:
+    - name: demo-server-prod-secrets
+      vars:
+        MYSQL_DB_PASSWORD: MYSQL_PASSWORD
+
+sealed-secrets-template:
+  name: demo-server-prod-secrets
+  sealedSecrets:
+      MYSQL_PASSWORD: this-should-be-different
 
 service:
   type: ClusterIP
